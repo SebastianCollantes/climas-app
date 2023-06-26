@@ -32,12 +32,11 @@
                                 <img 
                                     *ngIf="description == 'moderate rain' ||
                                     description == 'light rain' ||
-                                    description == 'drizzle'"    
+                                    description == 'drizzle' ||
+                                    description == 'light intensity shower rain' ||
+                                    description == 'heavy intensity rain' ||
+                                    description == 'shower rain'"  
                                     src="../assets/images/lluvia.png">
-                                <img
-                                    *ngIf="description == 'light intensity shower rain' ||
-                                    description == 'heavy intensity rain'"
-                                    src="../assets/images/lluvia-2.png">
                                 <img 
                                     *ngIf="description == 'thunderstorm with rain'"
                                     src="../assets/images/truenos.png">
