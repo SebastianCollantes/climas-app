@@ -1,0 +1,49 @@
+<div class="container" style="padding-top: 3em">
+    <div class="container">
+
+        <div class="box-container">
+            <h3>Temperatura en Chile</h3>
+            <div style="padding: 1em" class="row">
+                <span style="text-align:center">Selecciona una comuna</span>
+                <div class="col selector">
+                    <select [(ngModel)]="selectedCityValue" (change)="onCitySelected()">
+                        <option *ngFor="let city of ciudades" [value]="city">{{ city }}</option>
+                    </select>
+                </div>
+                <div *ngIf="cityIsSelected" class="selected">
+                    <div class="row" style="text-align:center; margin-top: 1em">
+                        <div style="font-weight: bolder; font-size: 1.2em" class="col">{{ communeName }}, {{countryCode}}</div>
+                    </div>
+                    <div class="info-container">
+                        <div class="row" style="padding:1em">
+                            <div class="col image">
+                                <img 
+                                    *ngIf="description == 'clear sky'"
+                                    src="../assets/images/sol.png">
+                                <img 
+                                    *ngIf="description == 'overcast clouds' || 
+                                    description == 'broken clouds' ||
+                                    description == 'scattered clouds' ||
+                                    description == 'few clouds' ||
+                                    description == 'mist' ||
+                                    description == 'haze' ||
+                                    description == 'fog'" 
+                                    src="../assets/images/nublado.png">
+                                <img 
+                                    *ngIf="description == 'moderate rain' ||
+                                    description == 'light rain' ||
+                                    description == 'drizzle'"    
+                                    src="../assets/images/lluvia.png">
+                                <img
+                                    *ngIf="description == 'light intensity shower rain' ||
+                                    description == 'heavy intensity rain'"
+                                    src="../assets/images/lluvia-2.png">
+                            </div>
+                            <div class="col info"><b>{{ description }}</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

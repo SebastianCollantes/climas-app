@@ -91,6 +91,11 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "node_modules/@fortawesome/fontawesome-free/webfonts",
+                "output": "/assets/fontawesome"
+              },
               "src/favicon.ico",
               "src/assets"
             ],
