@@ -40,8 +40,12 @@
                                 <img 
                                     *ngIf="description == 'thunderstorm with rain'"
                                     src="../assets/images/truenos.png">
+                                <img
+                                    *ngIf="description == 'light snow'"
+                                    src="../assets/images/nieve.png">
                             </div>
                             <div class="col info">
+                                <div *ngIf="description == 'light snow'" class="row">Nieve ligera</div>
                                 <div *ngIf="description == 'clear sky'" class="row">Cielo despejado</div>
                                 <div *ngIf="description == 'overcast clouds'" class="row">Nubes encapotadas</div>
                                 <div *ngIf="description == 'broken clouds'" class="row">Nubes dispersas</div>
@@ -57,9 +61,9 @@
                                 <div *ngIf="description == 'heavy intensity rain'" class="row">Lluvia de gran intensidad</div>
                                 <div *ngIf="description == 'thunderstorm with rain'" class="row">Tormena con lluvia</div>
 
-                                <div class="row">Temperatura: {{actualT}}°C</div>
-                                <div class="row">Máxima: {{maxT}}°C</div>
-                                <div class="row">Mínima: {{minT}}°C</div>
+                                <div class="row">Temperatura: {{actualT.toString().slice(0,4)}}°C</div>
+                                <div class="row">Máxima: {{maxT.toString().slice(0,4)}}°C</div>
+                                <div class="row">Mínima: {{minT.toString().slice(0,4)}}°C</div>
                                 <div class="row">Humedad: {{humidity}}%</div>
                                 <div class="row">Viento: {{ windSpeed}}km/H</div>
                                 <div class="row">Longitud: {{longitud}}</div>
