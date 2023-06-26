@@ -38,8 +38,34 @@
                                     *ngIf="description == 'light intensity shower rain' ||
                                     description == 'heavy intensity rain'"
                                     src="../assets/images/lluvia-2.png">
+                                <img 
+                                    *ngIf="description == 'thunderstorm with rain'"
+                                    src="../assets/images/truenos.png">
                             </div>
-                            <div class="col info"><b>{{ description }}</b></div>
+                            <div class="col info">
+                                <div *ngIf="description == 'clear sky'" class="row">Cielo despejado</div>
+                                <div *ngIf="description == 'overcast clouds'" class="row">Nubes encapotadas</div>
+                                <div *ngIf="description == 'broken clouds'" class="row">Nubes dispersas</div>
+                                <div *ngIf="description == 'scattered clouds'" class="row">Nubes dispersas</div>
+                                <div *ngIf="description == 'few clouds'" class="row">Pocas nubes</div>
+                                <div *ngIf="description == 'mist'" class="row">Neblina</div>
+                                <div *ngIf="description == 'haze'" class="row">Bruma </div>
+                                <div *ngIf="description == 'fog'" class="row">Neblina</div>
+                                <div *ngIf="description == 'moderate rain'" class="row">Lluvia moderada</div>
+                                <div *ngIf="description == 'light rain'" class="row">Lluvia leve</div>
+                                <div *ngIf="description == 'drizzle'" class="row">Llovizna</div>
+                                <div *ngIf="description == 'light intensity shower rain'" class="row">Lluvia de ligera intensidad</div>
+                                <div *ngIf="description == 'heavy intensity rain'" class="row">Lluvia de gran intensidad</div>
+                                <div *ngIf="description == 'thunderstorm with rain'" class="row">Tormena con lluvia</div>
+
+                                <div class="row">Temperatura: {{actualT}}°C</div>
+                                <div class="row">Máxima: {{maxT}}°C</div>
+                                <div class="row">Mínima: {{minT}}°C</div>
+                                <div class="row">Humedad: {{humidity}}%</div>
+                                <div class="row">Viento: {{ windSpeed}}km/H</div>
+                                <div class="row">Longitud: {{longitud}}</div>
+                                <div class="row">Latitud: {{latitude}}</div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -24,6 +24,8 @@ export class AppComponent implements OnInit {
   actualT: any;
   minT: any;
   maxT: any;
+  longitud: any;
+  latitude: any;
 
   constructor(
     private services: WeatherService,
@@ -41,6 +43,8 @@ export class AppComponent implements OnInit {
     this.actualT = null;
     this.minT = null;
     this.maxT = null;
+    this.longitud = null;
+    this.latitude = null;
   }
 
   ngOnInit(): void {
@@ -61,11 +65,18 @@ export class AppComponent implements OnInit {
       this.countryCode = this.selectedCityWeather.sys.country;
       this.windSpeed = this.selectedCityWeather.wind.speed;
       this.humidity = this.selectedCityWeather.main.humidity;
-      this.actualT = this.selectedCityWeather.main.temp;
-      this.minT = this.selectedCityWeather.main.temp_min;
-      this.maxT = this.selectedCityWeather.main.temp_max;
+      let actualF = this.selectedCityWeather.main.temp;
+      let actualC = (actualF - 32) * 5 / 9;
+      this.actualT = actualC.toString().slice(0,2);
+      let minF = this.selectedCityWeather.main.temp_min;
+      let minC = (minF - 32) * 5 / 9;
+      this.minT = minC.toString().slice(0,2);
+      let maxF = this.selectedCityWeather.main.temp_max;
+      let maxC = (maxF - 32) * 5 / 9;
+      this.maxT = maxC.toString().slice(0,2);
+      this.longitud = this.selectedCityWeather.coord.lon;
+      this.latitude = this.selectedCityWeather.coord.lat;
       this.cityIsSelected = true;
-      console.log('DATA', this.selectedCityWeather)
     },
     err => console.log('error', err));
     console.log('selected', this.selectedCityValue);
