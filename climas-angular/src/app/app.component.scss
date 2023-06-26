@@ -1,0 +1,35 @@
+*{
+    font-family:'Trebuchet MS';
+}
+.box-container{
+    max-height: 75vh;
+    padding-top: 3em;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: rgba(21, 27, 100, 0.3);
+    h3{
+        text-align: center;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-weight: bolder;
+    }
+}
+.selector{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.selected{
+    border-top: 1px solid black;
+    margin-top: 2em;
+}
+.info-container{
+    color:aliceblue;
+    width: 100%;
+    max-height: 14em;
+    background-color: black;
+    border-radius: 15px;
+    img{
+        border-radius: 15px;
+    }
+}
